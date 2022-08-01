@@ -2,9 +2,9 @@ import UIKit
 
 class TableViewController: UITableViewController {
 
-    let recipes = ["Бургер с курицей",
-                   "Рыба красная",
-                   "Стейк"
+    let recipes = [Recipe(name: "Бургер с курицей", tags: "Курица", image: "Бургер с курицей"),
+                   Recipe(name: "Рыба красная", tags: "Рыба", image: "Рыба красная"),
+                   Recipe(name: "Стейк", tags: "Говядина", image: "Стейк")
     ]
     
     override func viewDidLoad() {
@@ -26,16 +26,13 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
 
-        cell.nameOfRecipe.text = recipes[indexPath.row]
-        cell.imageOfRecipe.image = UIImage.init(named: recipes[indexPath.row])
+        cell.nameOfRecipe.text = recipes[indexPath.row].name
+        cell.tagsOfRecipe.text = recipes[indexPath.row].tags
+        cell.imageOfRecipe.image = UIImage.init(named: recipes[indexPath.row].image)
         cell.imageOfRecipe.layer.cornerRadius = cell.imageOfRecipe.frame.size.height / 2
         cell.imageOfRecipe.clipsToBounds = true
 
         return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 85
     }
     
     /*
@@ -48,4 +45,6 @@ class TableViewController: UITableViewController {
     }
     */
 
+    @IBAction func cancelAction(_ segue: UIStoryboardSegue) {}
+    
 }

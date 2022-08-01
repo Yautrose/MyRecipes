@@ -14,6 +14,8 @@
 		C1175B9328967F38004A021F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1175B9128967F38004A021F /* LaunchScreen.storyboard */; };
 		C1175B9D289682D5004A021F /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1175B9C289682D5004A021F /* TableViewController.swift */; };
 		C1176F8828969F3700E65EF2 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1176F8728969F3700E65EF2 /* CustomTableViewCell.swift */; };
+		C1176F8A2896A6A500E65EF2 /* RecipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1176F892896A6A500E65EF2 /* RecipeModel.swift */; };
+		C1176F8C2898636100E65EF2 /* NewRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1176F8B2898636100E65EF2 /* NewRecipeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		C1175B9428967F38004A021F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C1175B9C289682D5004A021F /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		C1176F8728969F3700E65EF2 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		C1176F892896A6A500E65EF2 /* RecipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeModel.swift; sourceTree = "<group>"; };
+		C1176F8B2898636100E65EF2 /* NewRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRecipeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,8 @@
 				C1175B8828967F2D004A021F /* SceneDelegate.swift */,
 				C1175B9C289682D5004A021F /* TableViewController.swift */,
 				C1176F8728969F3700E65EF2 /* CustomTableViewCell.swift */,
+				C1176F892896A6A500E65EF2 /* RecipeModel.swift */,
+				C1176F8B2898636100E65EF2 /* NewRecipeViewController.swift */,
 				C1175B8C28967F2D004A021F /* Main.storyboard */,
 				C1175B8F28967F38004A021F /* Assets.xcassets */,
 				C1175B9128967F38004A021F /* LaunchScreen.storyboard */,
@@ -143,8 +149,10 @@
 			files = (
 				C1175B8728967F2D004A021F /* AppDelegate.swift in Sources */,
 				C1175B9D289682D5004A021F /* TableViewController.swift in Sources */,
+				C1176F8A2896A6A500E65EF2 /* RecipeModel.swift in Sources */,
 				C1176F8828969F3700E65EF2 /* CustomTableViewCell.swift in Sources */,
 				C1175B8928967F2D004A021F /* SceneDelegate.swift in Sources */,
+				C1176F8C2898636100E65EF2 /* NewRecipeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
