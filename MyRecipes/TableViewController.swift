@@ -2,7 +2,7 @@ import UIKit
 
 class TableViewController: UITableViewController {
 
-    let recipes = [Recipe(name: "Бургер с курицей", tags: "Курица", image: "Бургер с курицей"),
+    var recipes = [Recipe(name: "Бургер с курицей", tags: "Курица", image: "Бургер с курицей"),
                    Recipe(name: "Рыба красная", tags: "Рыба", image: "Рыба красная"),
                    Recipe(name: "Стейк", tags: "Говядина", image: "Стейк")
     ]
@@ -24,11 +24,20 @@ class TableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
+        
+        let recipe = recipes[indexPath.row]
 
-        cell.nameOfRecipe.text = recipes[indexPath.row].name
-        cell.tagsOfRecipe.text = recipes[indexPath.row].tags
-        cell.imageOfRecipe.image = UIImage.init(named: recipes[indexPath.row].image)
+        cell.nameOfRecipe.text = recipe.name
+        cell.tagsOfRecipe.text = recipe.tags
+        
+        if recipe.recipeImage == nil {
+            cell.imageOfRecipe.image = UIImage.init(named: recipe.image!)
+        } else {
+            cell.imageOfRecipe.image = recipe.recipeImage
+        }
+        
         cell.imageOfRecipe.layer.cornerRadius = cell.imageOfRecipe.frame.size.height / 2
         cell.imageOfRecipe.clipsToBounds = true
 
@@ -45,6 +54,11 @@ class TableViewController: UITableViewController {
     }
     */
 
-    @IBAction func cancelAction(_ segue: UIStoryboardSegue) {}
+    @IBAction func unwindSegue(_ segue: UIStoryboardSegue) {
+        guard let newRecipeVC = segue.source as? NewRecipeViewController else { return }
+        newRecipeVC.saveNewRecipe()
+        recipes.append(newRecipeVC.newRecipe!)
+        tableView.reloadData()
+    }
     
 }
