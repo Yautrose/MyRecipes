@@ -1,9 +1,8 @@
 import UIKit
-import SwiftUI
+import RealmSwift
 
 class NewRecipeViewController: UITableViewController {
     
-    var newRecipe: Recipe?
     var imageIsChanged = false
 
     @IBOutlet var imageOfRecipe: UIImageView!
@@ -62,8 +61,11 @@ class NewRecipeViewController: UITableViewController {
             image = #imageLiteral(resourceName: "imagePlaceholder")
         }
         
-        newRecipe = Recipe(name: nameOfRecipe.text!, tags: tagsOfRecipe.text, image: nil, recipeImage: image)
-    }
+        let imageData = image?.pngData()
+        let newRecipe = Recipe(name: nameOfRecipe.text!, tags: tagsOfRecipe.text, recipeImage: imageData)
+        
+        StorageManager.saveRecipe(newRecipe)
+        }
     
     @IBAction func cancelAction(_ sender: UIBarButtonItem) {
         dismiss(animated: true)

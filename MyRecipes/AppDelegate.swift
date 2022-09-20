@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  MyRecipes
-//
-//  Created by Alexey Artyushenko on 31.07.2022.
-//
-
 import UIKit
 
 @main

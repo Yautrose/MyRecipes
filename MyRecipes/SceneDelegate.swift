@@ -1,10 +1,3 @@
-//
-//  SceneDelegate.swift
-//  MyRecipes
-//
-//  Created by Alexey Artyushenko on 31.07.2022.
-//
-
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
