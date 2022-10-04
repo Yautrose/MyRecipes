@@ -4,6 +4,7 @@ import RealmSwift
 class NewRecipeViewController: UITableViewController {
     
     var imageIsChanged = false
+    var currentRecipe: Recipe?
 
     @IBOutlet var imageOfRecipe: UIImageView!
     @IBOutlet weak var saveButton: UIBarButtonItem!
@@ -16,6 +17,7 @@ class NewRecipeViewController: UITableViewController {
         tableView.tableFooterView = UIView()
         saveButton.isEnabled = false
         nameOfRecipe.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
+        setupEditScreen()
     }
     
 // MARK: - Table View Delegate
@@ -52,7 +54,7 @@ class NewRecipeViewController: UITableViewController {
         }
     }
     
-    func saveNewRecipe() {
+    func saveRecipe() {
         var image: UIImage?
         
         if imageIsChanged {
@@ -64,8 +66,41 @@ class NewRecipeViewController: UITableViewController {
         let imageData = image?.pngData()
         let newRecipe = Recipe(name: nameOfRecipe.text!, tags: tagsOfRecipe.text, recipeImage: imageData)
         
-        StorageManager.saveRecipe(newRecipe)
+        if currentRecipe != nil {
+            let realm = try! Realm()
+            try! realm.write {
+                currentRecipe?.name = newRecipe.name
+                currentRecipe?.tags = newRecipe.tags
+                currentRecipe?.recipeImage = newRecipe.recipeImage
+            }
+        } else {
+            StorageManager.saveRecipe(newRecipe)
         }
+        
+    }
+    
+    private func setupEditScreen() {
+        if currentRecipe != nil {
+            
+            setupNavigationBar()
+            imageIsChanged = true
+            guard let data = currentRecipe?.recipeImage, let image = UIImage(data: data) else { return }
+            
+            imageOfRecipe.image = image
+            imageOfRecipe.contentMode = .scaleAspectFill
+            nameOfRecipe.text = currentRecipe?.name
+            tagsOfRecipe.text = currentRecipe?.tags
+        }
+    }
+    
+    private func setupNavigationBar() {
+        if let topBar = navigationController?.navigationBar.topItem {
+            topBar.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        }
+        navigationItem.leftBarButtonItem = nil
+        title = currentRecipe?.name
+        saveButton.isEnabled = true
+    }
     
     @IBAction func cancelAction(_ sender: UIBarButtonItem) {
         dismiss(animated: true)

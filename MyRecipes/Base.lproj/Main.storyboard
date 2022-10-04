@@ -63,6 +63,7 @@
                                     <outlet property="imageOfRecipe" destination="4d6-Q1-yrb" id="9a9-pl-Aee"/>
                                     <outlet property="nameOfRecipe" destination="p2m-nl-a7E" id="eTV-6E-U0P"/>
                                     <outlet property="tagsOfRecipe" destination="Uwk-CX-Efc" id="3GF-Hb-AHO"/>
+                                    <segue destination="NTl-dR-WFJ" kind="show" identifier="showDetail" id="E2c-5k-BCm"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -88,7 +89,7 @@
             <objects>
                 <tableViewController id="NTl-dR-WFJ" customClass="NewRecipeViewController" customModule="MyRecipes" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="ITw-4J-Abu">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <inset key="separatorInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
@@ -258,9 +259,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hs2-5b-VGU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="272" y="-23"/>
+            <point key="canvasLocation" x="274" y="-356"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="E2c-5k-BCm"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Photo" width="195" height="196"/>
         <systemColor name="systemBackgroundColor">

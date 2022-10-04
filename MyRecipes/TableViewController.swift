@@ -4,31 +4,12 @@ import RealmSwift
 class TableViewController: UITableViewController {
 
     var recipes: Results<Recipe>?
-//    private var token: NotificationToken?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let realm = try! Realm()
         recipes = realm.objects(Recipe.self)
-//        token?.invalidate()
-//        token = recipes!.observe { [weak self] (changes: RealmCollectionChange) in
-//            guard let tableView = self?.tableView else { return }
-//            switch changes {
-//            case .initial:
-//                tableView.reloadData()
-//            case .update(_, let deletions, let insertions, let modifications):
-//                tableView.performBatchUpdates({
-//                    tableView.deleteRows(at: deletions.map({ IndexPath(row: $0, section: 0)}), with: .automatic)
-//                    tableView.insertRows(at: insertions.map({ IndexPath(row: $0, section: 0) }), with: .automatic)
-//                    tableView.reloadRows(at: modifications.map({ IndexPath(row: $0, section: 0) }), with: .automatic)
-//                }, completion: { finished in
-//                    // ...
-//                })
-//            case .error(let error):
-//                fatalError("\(error)")
-//            }
-//        }
         
     }
 
@@ -80,10 +61,20 @@ class TableViewController: UITableViewController {
 
    
     // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail" {
+            guard let indexPath = tableView.indexPathForSelectedRow else { return }
+            let recipe = recipes![indexPath.row]
+            let newRecipeVC = segue.destination as! NewRecipeViewController
+            newRecipeVC.currentRecipe = recipe
+            
+        }
+    }
 
     @IBAction func unwindSegue(_ segue: UIStoryboardSegue) {
         guard let newRecipeVC = segue.source as? NewRecipeViewController else { return }
-        newRecipeVC.saveNewRecipe()
+        newRecipeVC.saveRecipe()
         tableView.reloadData()
     }
     
