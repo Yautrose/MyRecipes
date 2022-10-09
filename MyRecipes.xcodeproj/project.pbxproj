@@ -12,11 +12,12 @@
 		C1175B8E28967F2D004A021F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1175B8C28967F2D004A021F /* Main.storyboard */; };
 		C1175B9028967F38004A021F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1175B8F28967F38004A021F /* Assets.xcassets */; };
 		C1175B9328967F38004A021F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1175B9128967F38004A021F /* LaunchScreen.storyboard */; };
-		C1175B9D289682D5004A021F /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1175B9C289682D5004A021F /* TableViewController.swift */; };
+		C1175B9D289682D5004A021F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1175B9C289682D5004A021F /* MainViewController.swift */; };
 		C1176F8828969F3700E65EF2 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1176F8728969F3700E65EF2 /* CustomTableViewCell.swift */; };
 		C1176F8A2896A6A500E65EF2 /* RecipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1176F892896A6A500E65EF2 /* RecipeModel.swift */; };
 		C1176F8C2898636100E65EF2 /* NewRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1176F8B2898636100E65EF2 /* NewRecipeViewController.swift */; };
 		C11853FA28DA013900EF1CDD /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11853F928DA013900EF1CDD /* StorageManager.swift */; };
+		C151C15B28F07FC200F010AF /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C151C15A28F07FC100F010AF /* RatingControl.swift */; };
 		D69073D6B37D02390A811D83 /* Pods_MyRecipes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AB4ABFC8EB0135E151AEB74 /* Pods_MyRecipes.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,11 +32,12 @@
 		C1175B8F28967F38004A021F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1175B9228967F38004A021F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C1175B9428967F38004A021F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C1175B9C289682D5004A021F /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		C1175B9C289682D5004A021F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		C1176F8728969F3700E65EF2 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		C1176F892896A6A500E65EF2 /* RecipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeModel.swift; sourceTree = "<group>"; };
 		C1176F8B2898636100E65EF2 /* NewRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRecipeViewController.swift; sourceTree = "<group>"; };
 		C11853F928DA013900EF1CDD /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		C151C15A28F07FC100F010AF /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,9 +83,10 @@
 			children = (
 				C1175B8628967F2D004A021F /* AppDelegate.swift */,
 				C1175B8828967F2D004A021F /* SceneDelegate.swift */,
-				C1175B9C289682D5004A021F /* TableViewController.swift */,
+				C1175B9C289682D5004A021F /* MainViewController.swift */,
 				C11853F928DA013900EF1CDD /* StorageManager.swift */,
 				C1176F8728969F3700E65EF2 /* CustomTableViewCell.swift */,
+				C151C15A28F07FC100F010AF /* RatingControl.swift */,
 				C1176F892896A6A500E65EF2 /* RecipeModel.swift */,
 				C1176F8B2898636100E65EF2 /* NewRecipeViewController.swift */,
 				C1175B8C28967F2D004A021F /* Main.storyboard */,
@@ -219,9 +222,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1175B8728967F2D004A021F /* AppDelegate.swift in Sources */,
-				C1175B9D289682D5004A021F /* TableViewController.swift in Sources */,
+				C1175B9D289682D5004A021F /* MainViewController.swift in Sources */,
 				C1176F8A2896A6A500E65EF2 /* RecipeModel.swift in Sources */,
 				C11853FA28DA013900EF1CDD /* StorageManager.swift in Sources */,
+				C151C15B28F07FC200F010AF /* RatingControl.swift in Sources */,
 				C1176F8828969F3700E65EF2 /* CustomTableViewCell.swift in Sources */,
 				C1175B8928967F2D004A021F /* SceneDelegate.swift in Sources */,
 				C1176F8C2898636100E65EF2 /* NewRecipeViewController.swift in Sources */,

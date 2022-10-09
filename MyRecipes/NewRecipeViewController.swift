@@ -4,12 +4,13 @@ import RealmSwift
 class NewRecipeViewController: UITableViewController {
     
     var imageIsChanged = false
-    var currentRecipe: Recipe?
+    var currentRecipe: Recipe!
 
     @IBOutlet var imageOfRecipe: UIImageView!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var nameOfRecipe: UITextField!
     @IBOutlet weak var tagsOfRecipe: UITextField!
+    @IBOutlet weak var ratingControl: RatingControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,7 +65,10 @@ class NewRecipeViewController: UITableViewController {
         }
         
         let imageData = image?.pngData()
-        let newRecipe = Recipe(name: nameOfRecipe.text!, tags: tagsOfRecipe.text, recipeImage: imageData)
+        let newRecipe = Recipe(name: nameOfRecipe.text!,
+                               tags: tagsOfRecipe.text,
+                               recipeImage: imageData,
+                               rating: ratingControl.rating)
         
         if currentRecipe != nil {
             let realm = try! Realm()
@@ -72,6 +76,7 @@ class NewRecipeViewController: UITableViewController {
                 currentRecipe?.name = newRecipe.name
                 currentRecipe?.tags = newRecipe.tags
                 currentRecipe?.recipeImage = newRecipe.recipeImage
+                currentRecipe?.rating = newRecipe.rating
             }
         } else {
             StorageManager.saveRecipe(newRecipe)
@@ -90,6 +95,7 @@ class NewRecipeViewController: UITableViewController {
             imageOfRecipe.contentMode = .scaleAspectFill
             nameOfRecipe.text = currentRecipe?.name
             tagsOfRecipe.text = currentRecipe?.tags
+            ratingControl.rating = currentRecipe.rating
         }
     }
     
