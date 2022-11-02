@@ -6,7 +6,7 @@ import SwiftUI
     private var ratingButtons = [UIButton]()
     var rating = 0 {
         didSet {
-            updateButtonSelectesStates()
+            updateButtonSelectedStates()
         }
     }
     
@@ -83,10 +83,10 @@ import SwiftUI
             ratingButtons.append(button)
             
         }
-        updateButtonSelectesStates()
+        updateButtonSelectedStates()
     }
     
-    private func updateButtonSelectesStates() {
+    private func updateButtonSelectedStates() {
         for (index, button) in ratingButtons.enumerated() {
             button.isSelected = index < rating
         }
